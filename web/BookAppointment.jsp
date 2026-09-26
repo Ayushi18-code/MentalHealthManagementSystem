@@ -63,20 +63,20 @@
     String dbPhone="";
     String dbHostel="";
     try{
-        Connection conFetch = DriverManager.getConnection(
-        "jdbc:derby://localhost:1527/ManSparsh","bns","bns");
-        PreparedStatement psFetch = conFetch.prepareStatement(
-        "SELECT dob, smart_card_id, phone, hostel FROM student WHERE email=?");
-        psFetch.setString(1, studentEmail);
-        ResultSet rsFetch = psFetch.executeQuery();
-        if(rsFetch.next()){
-            if(rsFetch.getDate("dob")!=null)
-                dbDob = rsFetch.getDate("dob").toString();
-            dbSmart = rsFetch.getString("smart_card_id");
-            dbPhone = rsFetch.getString("phone");
-            dbHostel = rsFetch.getString("hostel");
-        }
-        conFetch.close();
+    Connection conFetch = DriverManager.getConnection(
+    "jdbc:derby://localhost:1527/ManSparsh","bns","bns");
+    PreparedStatement psFetch = conFetch.prepareStatement(
+    "SELECT dob, smart_card_id, phone, hostel FROM student WHERE email=?");
+    psFetch.setString(1, studentEmail);
+    ResultSet rsFetch = psFetch.executeQuery();
+    if(rsFetch.next()){
+        if(rsFetch.getDate("dob")!=null)
+            dbDob = rsFetch.getDate("dob").toString();
+        dbSmart = rsFetch.getString("smart_card_id");
+        dbPhone = rsFetch.getString("phone");
+        dbHostel = rsFetch.getString("hostel");
+    }
+    conFetch.close();
     }catch(Exception e){}
     boolean hasScheduledAppointment = false;
     try{

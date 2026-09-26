@@ -144,9 +144,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#f4f6fb;}
 
     <div class="student-mini" onclick="toggleProfile()">
       <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-      
-      <span><%= studentName %></span>     <!-- If we want to store value in html -->
-      
+      <span><%= studentName %></span>
       <div class="profile-dropdown" id="profileDropdown">
         <a href="StudentEditProfile.jsp">Edit</a>
         <a href="StudentHelp.jsp">Help</a>
